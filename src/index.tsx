@@ -35,6 +35,13 @@ export default function App(): JSX.Element {
 		newTodos[index].completed = !newTodos[index].completed;
 		setTodos(newTodos);
 	};
+
+	const removeTodo = (index: number): void => {
+		const newTodos: ITodo[] = [...todos];
+		newTodos.splice(index, 1);
+		// setTodos(newTodos.filter((todo: ITodo) => todo.id !== id));
+		setTodos(newTodos);
+	};
 	console.log(todos);
 	return (
 		<React.Fragment>
@@ -68,6 +75,12 @@ export default function App(): JSX.Element {
 									{todo.completed
 										? 'Completed'
 										: 'Incompleted'}
+								</button>
+								<button
+									type='button'
+									onClick={() => removeTodo(index)}
+								>
+									&times;
 								</button>
 							</li>
 						</React.Fragment>
