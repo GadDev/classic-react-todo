@@ -1,4 +1,4 @@
-# ts-react-app-from-scratch
+# classic todo
 
 Dependencies
 
